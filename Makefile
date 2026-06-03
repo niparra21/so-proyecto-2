@@ -6,7 +6,7 @@ CXXFLAGS := -std=c++17 -Wall -Wextra -pedantic -O2
 TARGET := jqindex
 OBJECTS := libjsonindex.o jqindex.o
 
-.PHONY: all clean test doc
+.PHONY: all clean
 
 all: $(TARGET)
 
@@ -19,11 +19,6 @@ libjsonindex.o: libjsonindex.c libjsonindex.h
 jqindex.o: jqindex.cpp libjsonindex.h
 	$(CXX) $(CXXFLAGS) -c jqindex.cpp
 
-test: $(TARGET)
-	sh tests/test_cli.sh
-
-doc:
-	/Users/nicole/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_documentation.py
 
 clean:
-	rm -f $(TARGET) $(OBJECTS) examples/*.jnx docs/documentacion.pdf
+	rm -f $(TARGET) $(OBJECTS) examples/*.jnx

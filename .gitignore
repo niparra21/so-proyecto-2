@@ -1,3 +1,9 @@
 jqindex
 *.o
 *.jnx
+*.exe
+*.obj
+docs/*.aux
+docs/*.log
+docs/*.out
+docs/*.toc
